@@ -1,0 +1,3 @@
+package com.example.rewards.service;
+import org.junit.jupiter.api.Test; import java.math.BigDecimal; import static org.junit.jupiter.api.Assertions.assertEquals;
+class RewardPointsCalculatorTest {private final RewardPointsCalculator c=new RewardPointsCalculator(); @Test void below50(){assertEquals(0,c.calculateRewardPoints(new BigDecimal("49.99")));} @Test void exactly50(){assertEquals(0,c.calculateRewardPoints(new BigDecimal("50")));} @Test void exactly100(){assertEquals(50,c.calculateRewardPoints(new BigDecimal("100")));} @Test void above100(){assertEquals(90,c.calculateRewardPoints(new BigDecimal("120")));} @Test void fractionalAmountRoundsDown(){assertEquals(101,c.calculateRewardPoints(new BigDecimal("125.75")));}}
