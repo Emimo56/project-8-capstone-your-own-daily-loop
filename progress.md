@@ -18,7 +18,6 @@
 
 - 2026-09-24: `org.awaitility:awaitility` 4.2.2 -> 4.3.0 is managed by the
   Spring Boot BOM. HUMAN DECISION: do not override BOM-managed versions.
-  Branch `claude/bump-awaitility` is abandoned (safe to delete). Awaitility
-  will move up when Spring Boot is upgraded.
+  Awaitility will move up when Spring Boot is upgraded.
 
 ## Done
