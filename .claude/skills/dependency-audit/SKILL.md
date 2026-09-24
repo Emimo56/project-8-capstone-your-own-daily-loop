@@ -40,7 +40,7 @@ Do not skip the progress file. It is your only memory between runs.
   "Open / needs a human": what you tried and why you stopped.
 
 ## 5. Update your memory last
-- Check out `claude/dep-audit-spine`.
+- Check out `claude/dep-audit-spine`
 - In `progress.md`: put each PR opened under "Done" (date, dependency, PR link).
     Put each FAIL or major bump under "Open / needs a human" (date, reason).
 - Commit and push `progress.md` to `claude/dep-audit-spine`.
@@ -50,3 +50,7 @@ Do not skip the progress file. It is your only memory between runs.
 - Never change `main` directly. Never merge anything. Only `claude/*` branches.
 - Never write `progress.md` on a bump branch. Only on `claude/dep-audit-spine`.
 - When in doubt, escalate to "needs a human".
+- Only bump dependencies declared directly in `pom.xml` with their own version.
+    Do not override versions managed by the Spring Boot parent/BOM. List those
+    under "Open / needs a human" instead.
+- Ignore pre-release versions (-M, -RC, -SNAPSHOT, alpha, beta).
