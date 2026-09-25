@@ -51,6 +51,7 @@ Do not skip the progress file. It is your only memory between runs.
 
 ## Rules
 - Never open more than 3 PRs in one run.
+- Never open a PR from `claude/dep-audit-spine`. It only stores progress.md.
 - Never change `main` directly. Never merge anything. Only `claude/*` branches.
 - Never write `progress.md` on a bump branch. Only on `claude/dep-audit-spine`.
 - When in doubt, escalate to "needs a human".
@@ -58,3 +59,5 @@ Do not skip the progress file. It is your only memory between runs.
     Do not override versions managed by the Spring Boot parent/BOM. List those
     under "Open / needs a human" instead.
 - Ignore pre-release versions (-M, -RC, -SNAPSHOT, alpha, beta).
+- If the newest version is a pre-release, find the newest STABLE version and
+  report that instead. A stable major bump goes under "Open / needs a human".
