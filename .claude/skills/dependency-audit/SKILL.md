@@ -40,10 +40,14 @@ Do not skip the progress file. It is your only memory between runs.
   "Open / needs a human": what you tried and why you stopped.
 
 ## 5. Update your memory last
-- Check out `claude/dep-audit-spine`
+- Check out `claude/dep-audit-spine`.
 - In `progress.md`: put each PR opened under "Done" (date, dependency, PR link).
-    Put each FAIL or major bump under "Open / needs a human" (date, reason).
-- Commit and push `progress.md` to `claude/dep-audit-spine`.
+  Put each FAIL, major bump, or BOM-managed update under "Open / needs a human"
+  (date, reason).
+- Always add one line under "## Run log" at the end of progress.md,
+  even if nothing was found:
+  `YYYY-MM-DD HH:MM — checked N, new PRs N, new notes N, skipped (already noted) N`
+- Commit and push `progress.md` to `claude/dep-audit-spine`. This is always the final step.
 
 ## Rules
 - Never open more than 3 PRs in one run.
