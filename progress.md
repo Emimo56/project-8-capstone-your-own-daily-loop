@@ -20,4 +20,16 @@
   Spring Boot BOM. HUMAN DECISION: do not override BOM-managed versions.
   Awaitility will move up when Spring Boot is upgraded.
 
+- 2026-09-25: Re-ran the audit on current `main`. `pom.xml` declares no
+  dependency with its own version (only the `spring-boot-starter-parent`
+  and two starters that inherit their versions from it), so there are no
+  directly-declared dependencies eligible to bump under the audit rules.
+  `mvn versions:display-dependency-updates` / `versions:display-parent-updates`
+  confirm the only outdated items are still (a) the Spring Boot parent/BOM
+  itself, whose only update is the 4.2.0-M2 pre-release milestone (major +
+  pre-release, excluded), and (b) dozens of transitive/BOM-managed
+  dependencies (Jackson, Logback, Awaitility, etc.), which are not to be
+  overridden. No branches created, no PRs opened this run. Same conclusion
+  holds until Spring Boot ships a 3.5.x patch/minor or a GA 4.x release.
+
 ## Done
